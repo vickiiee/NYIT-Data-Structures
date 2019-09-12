@@ -9,12 +9,19 @@ package sept12;
 class HighArray {
 	private long[] a; // ref to array a
 	private int nElems; // number of data items
+	
+	private int foundIndex;
 //-----------------------------------------------------------
 
 	public HighArray(int max) // constructor
 	{
 		a = new long[max]; // create the array
+		/**for(int i = 0; i < a.length; i++) {
+			System.out.println(a[i]);
+		}**/
 		nElems = 0; // no items yet
+		
+		foundIndex = 0;
 	}
 
 //-----------------------------------------------------------
@@ -23,6 +30,7 @@ class HighArray {
 		for (j = 0; j < nElems; j++) { // for each element,
 			if (a[j] == searchKey) { // found item?
 				//break; // exit loop before end
+				foundIndex = j;
 				return true;
 			}
 		}
@@ -44,7 +52,7 @@ class HighArray {
 
 //-----------------------------------------------------------
 	public boolean delete(long value) {
-		int j;
+		/**int j;
 		for (j = 0; j < nElems; j++) // look for it
 			if (value == a[j])
 				break;
@@ -56,7 +64,21 @@ class HighArray {
 				a[k] = a[k + 1];
 			nElems--; // decrement size
 			return true;
+		}**/
+		
+		boolean found = find(value);
+		if(found == true) {
+			//remove it
+			a[foundIndex] = 0;
+			for(int i = foundIndex; i<nElems; i++) { //43,1,2,3,4,0,0,0 = 5 elements, 8 cells
+				a[i]=a[i+1];
+			}
+			a[nElems] = 0; 
+			nElems = nElems-1;
+		}else {
+			return false;
 		}
+		return false;
 	} // end delete()
 //-----------------------------------------------------------
 
@@ -69,36 +91,3 @@ class HighArray {
 //-----------------------------------------------------------
 } // end class HighArray
 ////////////////////////////////////////////////////////////////
-
-class HighArrayApp {
-	public static void main(String[] args) {
-		int maxSize = 100; // array size
-		HighArray arr; // reference to array
-		arr = new HighArray(maxSize); // create the array
-
-		arr.insert(77); // insert 10 items
-		arr.insert(99);
-		arr.insert(44);
-		arr.insert(55);
-		arr.insert(22);
-		arr.insert(88);
-		arr.insert(11);
-		arr.insert(00);
-		arr.insert(66);
-		arr.insert(33);
-
-		arr.display(); // display items
-
-		int searchKey = 35; // search for item
-		if (arr.find(searchKey))
-			System.out.println("Found " + searchKey);
-		else
-			System.out.println("Can't find " + searchKey);
-
-		arr.delete(00); // delete 3 items
-		arr.delete(55);
-		arr.delete(99);
-
-		arr.display(); // display items again
-	} // end main()
-} // end class HighArrayApp
