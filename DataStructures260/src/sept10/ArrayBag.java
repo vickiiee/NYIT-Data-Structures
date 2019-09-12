@@ -34,7 +34,7 @@ public class ArrayBag implements Bag {
 			System.out.println("Bag Full! Cannot add " + item + "!");
 		} else {
 			arr[index] = item;
-			index++;
+			index= index+1;
 		}
 
 		return false;
@@ -83,8 +83,8 @@ public class ArrayBag implements Bag {
 			}
 		}
 		
-		//return elements;
-		return arr.length;
+		return elements;
+		//return arr.length; //tsting
 	}
 
 	@Override

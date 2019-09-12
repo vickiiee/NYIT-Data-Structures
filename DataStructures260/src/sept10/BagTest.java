@@ -8,7 +8,7 @@ public class BagTest {
 
     public static void main(String[] args) {
 
-        int initSize = 15;
+        int initSize = 1;
 
         /**
          * Create an instance of a class Bag and initialize the constructor with
@@ -49,7 +49,7 @@ public class BagTest {
         key=12;
         System.out.println("\nRemoving "+key);
         bag.remove(key);
-        bag.add(1); //test
+        //bag.add(1); //test
             
         printBag(bag);
 
