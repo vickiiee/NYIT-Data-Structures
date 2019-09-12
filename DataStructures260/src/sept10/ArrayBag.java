@@ -49,6 +49,7 @@ public class ArrayBag implements Bag {
 		if(item == arr[maxSize-1]) {
 			index = index -1;
 			arr[maxSize-1] = null;
+			return true;
 		}
 
 		for (int i = 0; i < arr.length; i++) {
