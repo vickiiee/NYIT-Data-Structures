@@ -45,6 +45,11 @@ public class ArrayBag implements Bag {
 		if (item == null) {
 			throw new IllegalArgumentException();
 		}
+		
+		if(item == arr[maxSize-1]) {
+			index = index -1;
+			arr[maxSize-1] = null;
+		}
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == item) {
