@@ -11,7 +11,7 @@ public class ArrayBag implements Bag {
 
 	public ArrayBag() {
 		arr = new Object[50];
-		maxSize = 50; 
+		maxSize = 50;
 		index = 0;
 	}
 
@@ -20,7 +20,7 @@ public class ArrayBag implements Bag {
 			throw new IllegalArgumentException("max size must be > 0");
 		}
 		arr = new Object[initSize];
-		maxSize = initSize; 
+		maxSize = initSize;
 		index = 0;
 	}
 
@@ -29,7 +29,7 @@ public class ArrayBag implements Bag {
 		if (item == null) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		if (index == maxSize) {
 			System.out.println("Bag Full! Cannot add " + item + "!");
 		} else {
@@ -45,11 +45,13 @@ public class ArrayBag implements Bag {
 		if (item == null) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == item) {
+				index = index -1;
+				
 				for (int j = i; j < arr.length - 1; j++) {
-						arr[j] = arr[j + 1];
+					arr[j] = arr[j + 1];
 				}
 				arr[arr.length - 1] = null;
 				return false;
@@ -67,18 +69,22 @@ public class ArrayBag implements Bag {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
 	@Override
 	public int numItems() {
 		int elements = 0;
+		
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] != null) {
 				elements = elements + 1;
 			}
 		}
-		return elements;
+		
+		//return elements;
+		return arr.length;
 	}
 
 	@Override
@@ -96,12 +102,15 @@ public class ArrayBag implements Bag {
 		if (newBag.numItems() > numItems()) {
 			return false;
 		}
-		Object[] ph = newBag.toArray();
+		
+		Object[] ph = newBag.toArray(); //ph = placeHolder
+		
 		for (int i = 0; i < arr.length; i++) {
 			if (contains(ph[i]) == false) {
 				return false;
 			}
 		}
+		
 		return true;
 	}
 
