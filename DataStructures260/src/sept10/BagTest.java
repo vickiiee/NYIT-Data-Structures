@@ -49,6 +49,7 @@ public class BagTest {
         key=12;
         System.out.println("\nRemoving "+key);
         bag.remove(key);
+        bag.add(1); //test
             
         printBag(bag);
 
