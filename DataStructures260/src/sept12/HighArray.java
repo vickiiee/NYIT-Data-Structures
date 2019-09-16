@@ -82,6 +82,10 @@ public class HighArray {
 		}
 		return max;
 	}
+	
+	public void removeMax() {
+		
+	}
 //-----------------------------------------------------------
 
 	public void display() // displays array contents
