@@ -45,7 +45,8 @@ public class HighArray {
 		boolean found = find(value);
 
 		if (found == true) {
-			System.out.println("Deleting " + value);
+
+			System.out.println("--Deleting " + value);
 
 			for (int i = foundIndex; i < nElems - 1; i++) { // 43,1,2,3,4,0,0,0 = 5 elements, 8 cells
 				a[i] = a[i + 1];
@@ -55,7 +56,7 @@ public class HighArray {
 			nElems = nElems - 1;
 			return true;
 		} else {
-			System.out.println(value + " not found.");
+			System.out.println("--"+value + " not found.");
 		}
 
 		return false;
@@ -76,9 +77,9 @@ public class HighArray {
 	// ---------2.2------------------
 	public long removeMax() {
 		long max = getMax();
-		System.out.println("Max:" + max);
+		//System.out.println("Max:" + max); //testing
 		delete(max);
-		display();
+		//display();
 		return max;
 
 	}
