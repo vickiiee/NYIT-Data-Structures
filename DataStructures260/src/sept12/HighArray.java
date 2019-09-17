@@ -108,6 +108,10 @@ public class HighArray {
 	}
 
 	public void removeMax() {
+		long max = getMax();
+		System.out.println("Max:"+ max);
+		delete(max);
+		display();
 
 	}
 //-----------------------------------------------------------
