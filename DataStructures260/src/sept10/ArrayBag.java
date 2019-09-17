@@ -9,6 +9,8 @@ public class ArrayBag implements Bag {
 	private int maxSize;
 	private int index;
 	private int elements;
+	//elements = index
+	
 	private static final int DEFAULT_MAX_SIZE = 50;
 
 	public ArrayBag() {
@@ -37,6 +39,7 @@ public class ArrayBag implements Bag {
 		} else {
 			arr[index] = item;
 			index = index + 1;
+			System.out.println("i++: " + index);// + "!"
 		}
 
 		return false;
@@ -51,13 +54,14 @@ public class ArrayBag implements Bag {
 		if (item == arr[maxSize - 1]) {
 			index = index - 1;
 			arr[maxSize - 1] = null;
+			//System.out.println("i--: " + index);
 			return true;
 		}
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < index; i++) {
 			if (arr[i] == item) {
 				index = index - 1;
-
+				//System.out.println("i--: " + index);
 				for (int j = i; j < arr.length - 1; j++) {
 					arr[j] = arr[j + 1];
 				}
@@ -72,12 +76,12 @@ public class ArrayBag implements Bag {
 
 	@Override
 	public boolean contains(Object item) {
-		int c = -1;
+		//int c = -1;
 		for (int i = 0; i < index; i++) {// arr.length
-			c++;
-			System.out.println(arr.length + "----" + c + "----" + arr[i]);
+			//c++;
+			//System.out.println(arr.length + "----" + c + "----" + arr[i]);
 			if (arr[i] == item) {
-				System.out.println(item + ":item--------arr:" + arr[i]);
+				//System.out.println(item + ":item--------arr:" + arr[i]);
 				return true;
 			}
 		}
@@ -111,17 +115,17 @@ public class ArrayBag implements Bag {
 	}
 
 	public boolean containsAll(ArrayBag newBag) {
-		System.out.println(elements + ":elements --------index" + index);
+		//System.out.println(elements + ":elements --------index" + index);
 		if (newBag.numItems() > numItems()) {
-			System.out.println("--------" + newBag.numItems());
+			//System.out.println("--------" + newBag.numItems());
 			return false;
 		}
 
 		Object[] ph = newBag.toArray(); // ph = placeHolder
 
-		for (int i = 0; i < newBag.numItems(); i++) {// arr.length
+		for (int i = 0; i < newBag.numItems(); i++) {
 			if (contains(ph[i]) == false) {
-				System.out.println("-false-" + ph[i]);
+				//System.out.println("-false-" + ph[i]); //test
 				return false;
 			}
 		}
