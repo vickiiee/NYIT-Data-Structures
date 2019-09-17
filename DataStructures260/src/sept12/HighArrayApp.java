@@ -1,7 +1,5 @@
 package sept12;
 
-import java.util.Arrays;
-
 //Vickie Wu
 //9/12/19
 public class HighArrayApp {
@@ -40,17 +38,14 @@ public class HighArrayApp {
 		arr.display();
 
 		//-------------2.3----Sorting using .removeMax();---------------------------------------
-
+		System.out.println("\nSorting:");
 		long[] inverse = new long[maxSize];
 		int index = 0;
 
-		System.out.println("\nSorting:");
 		while (arr.getMax() != -1) {
 			inverse[index] = arr.removeMax();
 			index++;
 		}
-		
-		//System.out.println(Arrays.toString(inverse));
 		
 		System.out.println("\nInverse Array:");
 		for (int i = 0; i < index; i++) {

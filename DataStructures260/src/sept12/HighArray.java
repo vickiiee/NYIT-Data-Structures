@@ -1,6 +1,5 @@
 package sept12;
 //Vickie Wu
-
 //9/12/19
 
 public class HighArray {
