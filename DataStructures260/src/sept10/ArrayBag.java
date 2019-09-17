@@ -8,9 +8,7 @@ public class ArrayBag implements Bag {
 	private Object[] arr;
 	private int maxSize;
 	private int index;
-	private int elements;
-	//elements = index
-	
+
 	private static final int DEFAULT_MAX_SIZE = 50;
 
 	public ArrayBag() {
@@ -35,11 +33,11 @@ public class ArrayBag implements Bag {
 		}
 
 		if (index == maxSize) {
-			System.out.println("Bag Full! Cannot add " + item);// + "!"
+			System.out.println("Bag Full! Cannot add " + item);
 		} else {
 			arr[index] = item;
 			index = index + 1;
-			System.out.println("i++: " + index);// + "!"
+			return true;
 		}
 
 		return false;
@@ -51,21 +49,20 @@ public class ArrayBag implements Bag {
 			throw new IllegalArgumentException();
 		}
 
-		if (item == arr[maxSize - 1]) {
+		if (item == arr[maxSize - 1]) { 						//if item = last element
 			index = index - 1;
 			arr[maxSize - 1] = null;
-			//System.out.println("i--: " + index);
 			return true;
 		}
 
-		for (int i = 0; i < index; i++) {
+		for (int i = 0; i < index; i++) { 						//for every element in the array (that is not null)
 			if (arr[i] == item) {
 				index = index - 1;
-				//System.out.println("i--: " + index);
+		
 				for (int j = i; j < arr.length - 1; j++) {
-					arr[j] = arr[j + 1];
+					arr[j] = arr[j + 1]; 						//move every element (from the matched element) down one index
 				}
-				arr[arr.length - 1] = null;
+				arr[arr.length - 1] = null; 					//last element has to be null
 				return true;
 			}
 		}
@@ -76,12 +73,8 @@ public class ArrayBag implements Bag {
 
 	@Override
 	public boolean contains(Object item) {
-		//int c = -1;
-		for (int i = 0; i < index; i++) {// arr.length
-			//c++;
-			//System.out.println(arr.length + "----" + c + "----" + arr[i]);
+		for (int i = 0; i < index; i++) {						// for every element in the array (that is not null)
 			if (arr[i] == item) {
-				//System.out.println(item + ":item--------arr:" + arr[i]);
 				return true;
 			}
 		}
@@ -91,16 +84,7 @@ public class ArrayBag implements Bag {
 
 	@Override
 	public int numItems() {
-		elements = 0;
-
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] != null) {
-				elements = elements + 1;
-			}
-		}
-
-		return elements;
-		// return arr.length; //tsting
+		return index;
 	}
 
 	@Override
@@ -115,18 +99,15 @@ public class ArrayBag implements Bag {
 	}
 
 	public boolean containsAll(ArrayBag newBag) {
-		//System.out.println(elements + ":elements --------index" + index);
-		if (newBag.numItems() > numItems()) {
-			//System.out.println("--------" + newBag.numItems());
+		if (newBag.numItems() > numItems()) { 					//if newBag is bigger than the original bag
 			return false;
 		}
 
-		Object[] ph = newBag.toArray(); // ph = placeHolder
+		Object[] ph = newBag.toArray(); 						// ph = placeHolder
 
-		for (int i = 0; i < newBag.numItems(); i++) {
-			if (contains(ph[i]) == false) {
-				//System.out.println("-false-" + ph[i]); //test
-				return false;
+		for (int i = 0; i < newBag.numItems(); i++) { 			//for every element in newBag (that is not null)
+			if (contains(ph[i]) == false) { 					//if original array does not contain this element from newBag
+				return false;									//return false
 			}
 		}
 
