@@ -17,6 +17,10 @@ public class HighArray {
 //-----------------------------------------------------------
 
 	public HighArray(int max) { // constructor
+		if (max <= 0) {
+			throw new IllegalArgumentException("size must be > 0");
+		}
+		
 		a = new long[max]; // create the array
 		maxSize = max;
 		
@@ -59,7 +63,9 @@ public class HighArray {
 //-----------------------------------------------------------
 	public boolean delete(long value) {
 		/**
-		 * int j; for (j = 0; j < nElems; j++) // look for it if (value == a[j]) break;
+		 * int j; for (j = 0; j < nElems; j++) // look for it 
+		 * 	if (value == a[j]) 
+		 * 	break;
 		 * if (j == nElems) // can't find it return false; else // found it { for (int k
 		 * = j; k < nElems; k++) // move higher ones down a[k] = a[k + 1]; nElems--; //
 		 * decrement size return true; }
@@ -81,12 +87,17 @@ public class HighArray {
 				System.out.println(i+": "+a[i]);
 			}**/ //testing
 		} else {
+			System.out.println(value+" not found.");
 			return false;
 		}
 		return false;
 	} // end delete()
 
 	public long getMax() {
+		if(nElems == 0) {
+			return -1;
+		}
+		
 		long max = -1;
 		for (int i = 0; i < nElems; i++) {
 			if (a[i] > max) {
