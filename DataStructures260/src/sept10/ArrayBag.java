@@ -48,21 +48,24 @@ public class ArrayBag implements Bag {
 		if (item == null) {
 			throw new IllegalArgumentException();
 		}
-
-		if (item == arr[maxSize - 1]) { 						//if item = last element
+		//if item = last element
+		if (item == arr[maxSize - 1]) { 						
 			index = index - 1;
 			arr[maxSize - 1] = null;
 			return true;
 		}
 
-		for (int i = 0; i < index; i++) { 						//for every element in the array (that is not null)
+		//for every element in the array (that is not null)
+		for (int i = 0; i < index; i++) { 						
 			if (arr[i] == item) {
 				index = index - 1;
 		
 				for (int j = i; j < arr.length - 1; j++) {
-					arr[j] = arr[j + 1]; 						//move every element (from the matched element) down one index
+					//move every element (from the matched element) down one index
+					arr[j] = arr[j + 1]; 						
 				}
-				arr[arr.length - 1] = null; 					//last element has to be null
+				//last element has to be null
+				arr[arr.length - 1] = null; 					
 				return true;
 			}
 		}
@@ -73,7 +76,8 @@ public class ArrayBag implements Bag {
 
 	@Override
 	public boolean contains(Object item) {
-		for (int i = 0; i < index; i++) {						// for every element in the array (that is not null)
+		// for every element in the array (that is not null)
+		for (int i = 0; i < index; i++) {						
 			if (arr[i] == item) {
 				return true;
 			}
@@ -99,15 +103,19 @@ public class ArrayBag implements Bag {
 	}
 
 	public boolean containsAll(ArrayBag newBag) {
-		if (newBag.numItems() > numItems()) { 					//if newBag is bigger than the original bag
+		//if newBag is bigger than the original bag
+		if (newBag.numItems() > numItems()) { 					
 			return false;
 		}
-
-		Object[] ph = newBag.toArray(); 						// ph = placeHolder
-
-		for (int i = 0; i < newBag.numItems(); i++) { 			//for every element in newBag (that is not null)
-			if (contains(ph[i]) == false) { 					//if original array does not contain this element from newBag
-				return false;									//return false
+		
+		// ph = placeHolder
+		Object[] ph = newBag.toArray(); 				
+		
+		//for every element in newBag (that is not null)
+		for (int i = 0; i < newBag.numItems(); i++) { 			
+			//if original array does not contain this element from newBag
+			if (contains(ph[i]) == false) { 					
+				return false;									
 			}
 		}
 
