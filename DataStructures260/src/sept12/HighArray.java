@@ -1,5 +1,6 @@
 package sept12;
 //Vickie Wu
+
 //9/12/19
 
 //highArray.java
@@ -11,11 +12,14 @@ public class HighArray {
 	private int nElems; // number of data items
 
 	private int foundIndex;
+	
+	private int maxSize;
 //-----------------------------------------------------------
 
-	public HighArray(int max) // constructor
-	{
+	public HighArray(int max) { // constructor
 		a = new long[max]; // create the array
+		maxSize = max;
+		
 		/**
 		 * for(int i = 0; i < a.length; i++) { System.out.println(a[i]); }
 		 **/
@@ -43,10 +47,13 @@ public class HighArray {
 	} // end find()
 //-----------------------------------------------------------
 
-	public void insert(long value) // put element into array
-	{
-		a[nElems] = value; // insert it
-		nElems++; // increment size
+	public void insert(long value){ // put element into array
+		if(nElems ==maxSize) {
+			System.out.println("Array is full. Cannot add "+ value);
+		} else {
+			a[nElems] = value; // insert it
+			nElems++; // increment size
+		}
 	}
 
 //-----------------------------------------------------------
@@ -60,13 +67,19 @@ public class HighArray {
 
 		boolean found = find(value);
 		if (found == true) {
+			System.out.println("Deleting "+value);
 			// remove it
-			a[foundIndex] = 0;
-			for (int i = foundIndex; i < nElems; i++) { // 43,1,2,3,4,0,0,0 = 5 elements, 8 cells
+//			a[foundIndex] = 0;
+			for (int i = foundIndex; i < nElems-1; i++) { // 43,1,2,3,4,0,0,0 = 5 elements, 8 cells
 				a[i] = a[i + 1];
 			}
-			a[nElems] = 0;
+			
+			a[nElems-1] = 0;
 			nElems = nElems - 1;
+			
+			/**for (int i = 0; i < a.length; i++) { // 43,1,2,3,4,0,0,0 = 5 elements, 8 cells
+				System.out.println(i+": "+a[i]);
+			}**/ //testing
 		} else {
 			return false;
 		}
@@ -75,16 +88,16 @@ public class HighArray {
 
 	public long getMax() {
 		long max = -1;
-		for(int i = 0; i < nElems; i++) {
-			if(a[i]>max) {
+		for (int i = 0; i < nElems; i++) {
+			if (a[i] > max) {
 				max = a[i];
 			}
 		}
 		return max;
 	}
-	
+
 	public void removeMax() {
-		
+
 	}
 //-----------------------------------------------------------
 
