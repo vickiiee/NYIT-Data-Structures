@@ -7,8 +7,14 @@ public class OrderedApp {
 		arr = new OrdArray(maxSize); // create the array
 
 		arr.insert(77); // insert 10 items
+		arr.display();
+		
 		arr.insert(99);
+		arr.display();
+		
 		arr.insert(44);
+		arr.display();
+		
 		arr.insert(55);
 		arr.insert(22);
 		arr.insert(88);
