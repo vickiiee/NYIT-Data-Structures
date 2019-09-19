@@ -43,27 +43,23 @@ public class OrdArray {
 	{
 		System.out.println("\nInserting vlaue: " + value);
 
-		if (nElems == max) {
+		//Array is at full capacity
+		if (nElems == max) { 
 			System.out.println("Array is full. Cannot add " + value);
-		} else
-		// binary Search
-		if (nElems == 0) { // no values in array
+		} else if (nElems == 0) { // no values in array
 			a[0] = value;
 			nElems++;
 			display();
 			System.out.println("nELems: " + nElems);
-
-			// break
-
-		} else { // at least one value in the array
+		} else { 													// at least one value in the array
+			// binary Search
 			int lowerBound = 0;
 			int upperBound = nElems - 1;
 			int curIn;
 
 			while (true) {
 				curIn = (lowerBound + upperBound) / 2;
-				// System.out.println("lowerBound: "+ lowerBound + " |upperBound: "+ upperBound+
-				// " |curIn: "+ curIn);
+				System.out.println("lowerBound: "+ lowerBound + " |upperBound: "+ upperBound+ " |curIn: "+ curIn);
 				if (a[curIn] == value) {
 					nElems = nElems + 1;
 					for (int i = nElems; i > curIn; i--) {
