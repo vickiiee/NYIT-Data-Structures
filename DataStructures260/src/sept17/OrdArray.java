@@ -91,7 +91,7 @@ public class OrdArray {
 	
 	
 	public boolean delete(long value) {
-		int j = find(value);
+		/**int j = find(value);
 		if (j == nElems) // can't find it
 			return false;
 		else // found it
@@ -100,7 +100,37 @@ public class OrdArray {
 				a[k] = a[k + 1];
 			nElems--; // decrement size
 			return true;
-		}
+		}**/
+		
+		
+		//binary search
+		int lowerBound = 0;
+		int upperBound = nElems - 1;
+		int curIn;
+
+		while (true) {
+			curIn = (lowerBound + upperBound) / 2;
+			if (a[curIn] == value) {
+				//delete it
+				for (int i = curIn; i < nElems; i++) // move bigger ones down
+					a[i] = a[i + 1];
+				nElems--; // decrement size
+				return true;
+				//check if last element needs to bechanged
+			} else if (lowerBound > upperBound) {// can't find it
+				System.out.println(value + " not found");
+			return false;
+			}else // divide range
+			{
+				if (a[curIn] < value)
+					lowerBound = curIn + 1; // it's in upper half
+				else
+					upperBound = curIn - 1; // it's in lower half
+			} // end else divide range
+		} // end while
+		
+		
+		
 	} // end delete()
 
 	public void display() // displays array contents
