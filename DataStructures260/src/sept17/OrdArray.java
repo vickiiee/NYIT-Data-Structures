@@ -140,4 +140,41 @@ public class OrdArray {
 		System.out.println("");
 	}
 //-----------------------------------------------------------
+
+	public OrdArray merge(OrdArray input) {
+		//long[] merge = new long[(input.size()+size())];
+		OrdArray merge = new OrdArray((input.size()+size()));
+		/**for(int i = 0; i < nElems; i++) {
+			merge.insert(a[i]);
+		}
+		long[] inputArr = input.arr();
+		for(int i = 0; i < input.size(); i++) {
+			merge.insert(inputArr[i]);
+		}
+		return merge;**/
+		
+		int og = size();
+		int inp = input.size();
+		long[] inputArr = input.arr();
+		int index = 0;
+		
+		if(og>inp) {
+			for(int i = 0; i < inp;i++) {
+				for(int j = 0; j < og; j++) {
+					long min = inputArr[i];
+					if(min < a[j]) {
+						merge.insert(min);
+					}
+					if()
+				}
+			}
+		}
+		
+		return merge;
+	}
+	
+	
+	public long[] arr() {
+		return a;
+	}
 } 
