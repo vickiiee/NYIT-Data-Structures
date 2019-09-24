@@ -1,5 +1,7 @@
 package sept24;
 
+import java.util.Arrays;
+
 //Vickie Wu
 //9/24/19
 
@@ -53,6 +55,7 @@ class ArrayIns {
 //--------------------------------------------------------------
 	
 	public double median() {
+		insertionSort(); //make sure the arr is already sorted
 		int medIndex;
 		
 		if(nElems%2 == 0) { //even number of elements
@@ -62,5 +65,44 @@ class ArrayIns {
 			medIndex = (nElems/2);
 			return a[medIndex];
 		} 
+	}
+	
+	public void noDups() {
+		insertionSort();//make sure the arr is already sorted
+		
+		//linear notation: skip indexes
+		
+		int uniqueNums = 0;
+		
+		//String arr = Arrays.toString(a);
+		
+		//find out how many unique elements there are
+		for(int i = 0; i < nElems; i++) {
+			long input = a[i];
+			
+			if(input != a[i+1] ) {
+				uniqueNums++;
+			}
+		}
+		
+		System.out.println("Unique Nums: " +uniqueNums);
+		
+		//make array with the uniqueNUms as length:
+		
+		long[] noDupArr = new long [uniqueNums];
+		int index  = 0;
+		for(int i = 0; i< nElems; i++) {
+			long input = a[i];
+			
+			if(input != a[i+1] ) {
+				System.out.println("a[i]: "+ a[i]);
+				//noDupArr[index] = a[i];
+				a[index] = a[i];
+				index++;
+			}
+		}
+		nElems = uniqueNums;
+		//a = noDupArr;
+		System.out.println(Arrays.toString(noDupArr));
 	}
 }
