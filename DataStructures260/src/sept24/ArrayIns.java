@@ -103,6 +103,6 @@ class ArrayIns {
 		}
 		nElems = uniqueNums;
 		//a = noDupArr;
-		System.out.println(Arrays.toString(noDupArr));
+		System.out.println(Arrays.toString(noDupArr)); //dont need no dup arr
 	}
 }
