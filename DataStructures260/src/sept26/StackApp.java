@@ -11,7 +11,7 @@ public class StackApp {
 		test.display();
 		
 		System.out.println();
-		DecimalToBinary test1 = new DecimalToBinary(98765);
+		DecimalToBinary test1 = new DecimalToBinary(2019);
 		test1.convert();
 		test1.display();
 
