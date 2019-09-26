@@ -1,5 +1,8 @@
 package sept26;
 
+//Vickie Wu
+//9/26/19
+
 public class DecimalToBinary {
 
 	private long decimal;
