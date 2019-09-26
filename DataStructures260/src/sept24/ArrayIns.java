@@ -67,10 +67,10 @@ class ArrayIns {
 		} 
 	}
 	
-	public void noDups() {
+	public void noDups() { //CURRENT array must contain no duplicates
 		insertionSort();//make sure the arr is already sorted
 		
-		//linear notation: skip indexes
+		//linear notation: no nested for loops, skip indexes
 		
 		int uniqueNums = 0;
 		
@@ -81,6 +81,10 @@ class ArrayIns {
 			long input = a[i];
 			
 			if(input != a[i+1] ) {
+				//uniqueNums++;
+				System.out.println("a[i]: "+ a[i]);
+				//noDupArr[index] = a[i];
+				a[uniqueNums] = a[i];
 				uniqueNums++;
 			}
 		}
@@ -89,8 +93,8 @@ class ArrayIns {
 		
 		//make array with the uniqueNUms as length:
 		
-		long[] noDupArr = new long [uniqueNums];
-		int index  = 0;
+		//long[] noDupArr = new long [uniqueNums];
+		/*int index  = 0;
 		for(int i = 0; i< nElems; i++) {
 			long input = a[i];
 			
@@ -100,7 +104,7 @@ class ArrayIns {
 				a[index] = a[i];
 				index++;
 			}
-		}
+		}*/
 		nElems = uniqueNums;
 		//a = noDupArr;
 		System.out.println(Arrays.toString(a)); //dont need no dup arr
