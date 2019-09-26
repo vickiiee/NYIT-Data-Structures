@@ -31,8 +31,8 @@ public class InsertSortApp {
 		System.out.println("Unsorted array: ");
 		arr.display(); // display items
 
-		arr.insertionSort(); // insertion-sort them
 		System.out.println("\nSorted array: ");
+		arr.insertionSort(); // insertion-sort them
 		arr.display();
 		
 		System.out.println("Median is: " + arr.median());
@@ -40,6 +40,7 @@ public class InsertSortApp {
 		System.out.println("\nTook out duplicates:");
 		arr.noDups();
 		arr.display(); // display them again	
+		
 		System.out.println("Median is: " + arr.median());
 	} // end main()
 } // end class InsertSortApp
