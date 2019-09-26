@@ -5,19 +5,20 @@ package sept26;
 
 public class StackApp {
 	public static void main(String[] args) {
-		StackX theStack = new StackX(10); // make new stack
-		theStack.push(20); // push items onto stack
-		theStack.push(40);
-		theStack.push(60);
-		theStack.push(80);
+		
+		DecimalToBinary test = new DecimalToBinary(233);
+		test.convert();
+		test.display();
+		
+		System.out.println();
+		DecimalToBinary test1 = new DecimalToBinary(98765);
+		test1.convert();
+		test1.display();
 
-		while (!theStack.isEmpty()){ // until it's empty, 
-			// delete item from stack
-			long value = theStack.pop();
-			System.out.print(value); // display it
-			System.out.print(" ");
-		} // end while
-		System.out.println("");
+		System.out.println();
+		DecimalToBinary test2 = new DecimalToBinary(24);
+		test2.convert();
+		test2.display();
 	} // end main()
-} // end class StackApp
-////////////////////////////////////////////////////////////////
+
+} 
