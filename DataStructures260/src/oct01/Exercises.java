@@ -15,7 +15,7 @@ public class Exercises {
 		
 		//------------STACK---------------------------
 		System.out.println("Exercise 3 Stack:");
-		System.out.println("RemoveDownTo(x):");
+		System.out.println("RemoveDownTo(Stack, num):");
 		System.out.println("top -> bottom");
 		
 		stack1.push(10);
@@ -37,7 +37,7 @@ public class Exercises {
 		
 		//---------------QUEUE-------------------------------------
 		System.out.println("\n\nExercise 4 Queue:");
-		System.out.println("RemoveSecond():");
+		System.out.println("RemoveSecond(Queue queue):");
 		System.out.println("beginning -> end");
 		
 		q1.insert(10);
