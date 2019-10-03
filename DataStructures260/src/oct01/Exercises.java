@@ -13,18 +13,16 @@ public class Exercises {
 		StackX stack1 = new StackX(100);
 		Queue q1 = new Queue(20); 
 		
-		System.out.println("Stack:");
+		//------------STACK---------------------------
+		System.out.println("Exercise 3 Stack:");
 		System.out.println("RemoveDownTo(x):");
 		System.out.println("top -> bottom");
 		
 		stack1.push(10);
 		//System.out.println("Pushed: "+stack1.peek());
 		stack1.push(20);
-		//System.out.println("Pushed: "+stack1.peek());
 		stack1.push(30);
-		//System.out.println("Pushed: "+stack1.peek());
 		stack1.push(40); 
-		//System.out.println("Pushed: "+stack1.peek());
 		stack1.push(50); 
 		stack1.push(60); 
 		stack1.push(70);
@@ -34,11 +32,11 @@ public class Exercises {
 		//top - bottom
 
 		System.out.print("Result: ");
-		test1.removeDownTo(stack1, 60);
+		test1.removeDownTo(stack1, 60); //exercise 3 method
 		test1.displayStack(stack1);
 		
 		//---------------QUEUE-------------------------------------
-		System.out.println("\n\nQueue:");
+		System.out.println("\n\nExercise 4 Queue:");
 		System.out.println("RemoveSecond():");
 		System.out.println("beginning -> end");
 		
@@ -54,7 +52,7 @@ public class Exercises {
 		q1.insert(100);
 	
 		System.out.print("Result: ");
-		test1.removeSecond(q1);
+		test1.removeSecond(q1); //exercise 4 method
 		test1.displayQueue(q1);
 	}
 	
