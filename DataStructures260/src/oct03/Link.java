@@ -4,10 +4,9 @@ package oct03;
 //10/03/19
 
 public class Link {
-	public int iData; // data item
-	public double dData; // data item
-	public Link next; // next link in list
-	public Link previous;
+	private int iData; // data item
+	private double dData; // data item
+	private Link next; // next link in list
 //-------------------------------------------------------------
 
 	public Link(int id, double dd) // constructor
@@ -19,22 +18,26 @@ public class Link {
 
 	public void displayLink() // display ourself
 	{
-		System.out.print("{" + iData +  "} "); //my edit
-		//System.out.print("{" + iData + ", " + dData + "} ");
+		System.out.print("{" + iData + "} "); // my edit
+		// System.out.print("{" + iData + ", " + dData + "} ");
 	}
-	
-	//Added methods
-	public int getiData() { //int
+
+	// Added methods
+	public int getiData() { // int
 		return iData;
 	}
-	
-	public double getdData() { //double
+
+	public double getdData() { // double
 		return dData;
 	}
-	
-	public Link getNext() { //link
+
+	public Link getNext() { // link
 		return next;
 	}
-	
+
+	public void setNext(Link next) {
+		this.next = next;
+	}
+
 } // end class Link
-////////////////////////////////////////////////////////////////
+
