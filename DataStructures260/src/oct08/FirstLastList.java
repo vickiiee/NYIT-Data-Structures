@@ -71,5 +71,27 @@ public class FirstLastList {
 			current = current.next;
 		}
 	}
+	
+	public void swap() {
+		//check ot size
+		int size = 0; 
+		Link current = first;
+		while (current != null) {
+			size++;
+			current = current.next;
+		}
+		if(size < 2) {
+			System.out.println("List must have at least 2 links. Modify it.");
+			return;
+		}
+		
+		//get data and change data
+		
+		Long headData = last.dData; 
+		Long tailData = first.dData; 
+		
+		first.dData = headData;
+		last.dData = tailData;
+	}
 //-------------------------------------------------------------
 }
