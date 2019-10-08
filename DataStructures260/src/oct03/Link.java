@@ -1,9 +1,8 @@
 package oct03;
 
-//linkList.java
-//demonstrates linked list
-//to run this program: C>java LinkListApp
-////////////////////////////////////////////////////////////////
+//VIckie Wu
+//10/03/19
+
 public class Link {
 	public int iData; // data item
 	public double dData; // data item
@@ -20,7 +19,8 @@ public class Link {
 
 	public void displayLink() // display ourself
 	{
-		System.out.print("{" + iData + ", " + dData + "} ");
+		System.out.print("{" + iData +  "} "); //my edit
+		//System.out.print("{" + iData + ", " + dData + "} ");
 	}
 	
 	//Added methods

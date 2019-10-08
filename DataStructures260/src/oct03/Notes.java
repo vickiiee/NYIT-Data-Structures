@@ -3,7 +3,7 @@ package oct03;
 public class Notes {
 
 	public Notes() {
-		/**
+		/**Chapter 5!
 		 * Linked Lists
 		 * 
 		 * insert element will be placed in the beginning
