@@ -5,9 +5,6 @@ package oct03;
 
 public class LinkListApp {
 	public static void main(String[] args) {
-		/*
-		 * Your main() should print a message stating which method is called, and the contents of the list before and after any of the above methods is called.
-		 */
 		LinkList theList = new LinkList(); // make new list
 
 		theList.insertFirst(1, 2.99); // ignore double
