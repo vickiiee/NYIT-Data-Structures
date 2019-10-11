@@ -1,5 +1,8 @@
 package oct10;
 
+//Vickie Wu
+//10/10/19
+
 public class DoublyLinkedList {
 	private Link first; // ref to first item
 	private Link last; // ref to last item

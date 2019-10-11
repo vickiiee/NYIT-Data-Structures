@@ -1,5 +1,8 @@
 package oct10;
 
+//Vickie Wu
+//10/10/19
+
 public class PriorityLinkQueue{
 
 	// sorted linked list
@@ -80,7 +83,6 @@ public class PriorityLinkQueue{
 			System.out.println("	isEmpty");
 			list.insertFirst(key);
 		} else {
-
 			Link current = list.getFirst();
 			long data = current.dData;
 			while (current != null) {
@@ -109,9 +111,6 @@ public class PriorityLinkQueue{
 
 						return;
 					} else {
-						/*
-						 * Link newLink = new Link(key); newLink.next = getFirst(); setFirst(newLink);
-						 */
 						list.insertFirst(key);
 						return;
 					}
