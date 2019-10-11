@@ -13,14 +13,49 @@ public class LinkList {
 
 	// -----------removeALL()----------------------
 	public LinkList removeAll(int n) {
-		Link current = first; // start at beginning of list
 		LinkList p = new LinkList();
-		while (current != null) // until end of list,
-		{
-			delete(n);
-			current = current.getNext(); // move to next link
-		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////
+		// MY Originl code that worked, but wasnt efficient and had o(n^2)/ long runtime
 
+		/*
+		 * Link current = first; // start at beginning of list
+		 * 
+		 * while (current != null) // until end of list, { delete(n); current =
+		 * current.getNext(); // move to next link }
+		 */
+
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		//MY new code written exactly one week later after i understand linklists better and reviewed the delete method. More efficient!
+		
+		Link current = first;
+		Link previous = first;
+		while (current != null) {
+			int i = current.getiData();
+			if (i == n) {
+				if (current == first) { 					// first
+					//System.out.println("	first");
+					first = first.getNext();
+					previous = first;
+					current = first;
+					displayList();
+				} else if (current.getNext() == null) {		// last
+					//System.out.println("	last");
+					previous.setNext(null);
+					current = null;
+					break;
+				} else {									// middle
+					//System.out.println("	middle");
+					displayList();
+					previous.setNext(current.getNext());
+					current = current.getNext();
+				}
+			} else {
+				previous = current;
+				current = current.getNext();
+			}
+
+		}
+		////////////////////////////////////////////////////////////////////////////////////////////////////
 		// new LinkList has the results of original LinkList (basically a duplicate)
 		Link c = first;
 		while (c != null) // until end of list,
@@ -28,7 +63,6 @@ public class LinkList {
 			p.insertFirst(c.getiData(), c.getdData());
 			c = c.getNext(); // move to next link
 		}
-
 		return p;
 	}
 
