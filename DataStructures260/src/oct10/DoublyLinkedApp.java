@@ -25,19 +25,38 @@ public class DoublyLinkedApp {
 		theList.insertAfter(33, 88); // insert 88 after 33
 
 		theList.displayForward(); // display list forward
-		
+		theList.displayBackward();
 		
 		System.out.println("Priority Queue");
 		PriorityLinkQueue test = new PriorityLinkQueue();
 	//	test.displayForward();
-	//	test.insert(57);
-		//test.insert(28);
-		//test.insert(3);
-	//	test.insert(100);
-		//test.insert(28);
+		test.insertSort(56);
+		test.insertSort(28);
+		test.insertSort(57);
+		/*
+		 * doesnt work if num is bigger than previous
+		 */
+		test.insertSort(9); 
+		test.insertSort(3);
+		test.insertSort(100);
+		test.insertSort(9); 
+		test.insertSort(3);
+		test.insertSort(100);
+		
 		System.out.println("\nPriority Queue");
-		//test.insert(3); 
-//		test.displayForward();
+		
+		test.displayForward();
+		test.displayBackward();
+		test.remove();
+		test.displayForward();
+		test.displayBackward();
+		test.remove();
+		test.displayForward();
+		test.displayBackward();
+		test.remove();
+		test.displayForward();
+		test.displayBackward();
+		
 	//	test.displayForward();
 	} // end main()
 } 

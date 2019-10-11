@@ -3,11 +3,8 @@ package oct10;
 public class PriorityLinkQueue extends DoublyLinkedList{
 
 	//sorted linked list
-	
-	private DoublyLinkedList list; //maybe??
-	
 	public PriorityLinkQueue() {
-		list = new DoublyLinkedList();
+
 	}
 	
 	public void insertSort(long key) { //or insert long and make new link
@@ -65,7 +62,9 @@ public class PriorityLinkQueue extends DoublyLinkedList{
 	
 	public long remove() {
 		//just remove last link because if its sorted it should already have the highest in the lst
-		return 0;
+		Link l = deleteLast();
+		long value = l.dData;
+		return value;
 	}
 
 	
