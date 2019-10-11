@@ -46,11 +46,6 @@ public class PriorityLinkQueue extends DoublyLinkedList{
 						newLink.next = current;
 						current.previous = newLink;
 						
-						
-						
-						//newLink.previous.next = newLink;
-			
-						current.previous = newLink;
 						return;
 					}else {
 						/*Link newLink = new Link(key);
