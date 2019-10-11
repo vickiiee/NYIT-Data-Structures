@@ -37,7 +37,7 @@ public class LinkList {
 					first = first.getNext();
 					previous = first;
 					current = first;
-					displayList();
+					//displayList();
 				} else if (current.getNext() == null) {		// last
 					//System.out.println("	last");
 					previous.setNext(null);
@@ -45,7 +45,7 @@ public class LinkList {
 					break;
 				} else {									// middle
 					//System.out.println("	middle");
-					displayList();
+					//displayList();
 					previous.setNext(current.getNext());
 					current = current.getNext();
 				}
