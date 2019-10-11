@@ -20,8 +20,11 @@ public class LinkList {
 		/*
 		 * Link current = first; // start at beginning of list
 		 * 
-		 * while (current != null) // until end of list, { delete(n); current =
-		 * current.getNext(); // move to next link }
+		 * while (current != null) // until end of list, 
+		 * { 
+		 * 	delete(n); 
+		 * current = current.getNext(); // move to next link 
+		 * }
 		 */
 
 		//////////////////////////////////////////////////////////////////////////////////////////////////
