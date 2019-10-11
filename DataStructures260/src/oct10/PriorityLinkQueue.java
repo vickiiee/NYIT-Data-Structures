@@ -10,7 +10,7 @@ public class PriorityLinkQueue extends DoublyLinkedList{
 		list = new DoublyLinkedList();
 	}
 	
-	public void insert(long key) { //or insert long and make new link
+	public void insertSort(long key) { //or insert long and make new link
 		//smallest -> biggest
 		//0,2,5,7,9
 		//key = 8
@@ -19,9 +19,10 @@ public class PriorityLinkQueue extends DoublyLinkedList{
 			insertFirst(key);
 		}else {
 			Link current = getFirst();
-			while(current != null) {
+			long data = current.dData;
+			while(current != null && data<key) {
 				//long previous = current.previous.dData;
-				long data = current.dData;
+				data = current.dData;
 				
 				if(data>key) {
 					/*inset before
@@ -39,6 +40,7 @@ public class PriorityLinkQueue extends DoublyLinkedList{
 						return;
 					}
 				}
+				current = current.next;
 			}
 			insertLast(key);
 		}
