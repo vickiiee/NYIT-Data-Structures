@@ -38,7 +38,7 @@ public class FirstLastList {
 		last.setdData(tailData);
 		*/
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//actual swapping links instead of elements
+		//actual swapping links instead of elements: finally figured it out
 		Link c = first;
 		Link pre = first;
 		while(c!=null) {
