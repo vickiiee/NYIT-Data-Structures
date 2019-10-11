@@ -150,4 +150,12 @@ public class DoublyLinkedList {
 	public void setFirst(Link first) {
 		this.first = first;
 	}
+	
+	public Link getLast() {
+		return last;
+	}
+	
+	public void setLast(Link last) {
+		this.last = last;
+	}
 } // end class DoublyLinkedList
