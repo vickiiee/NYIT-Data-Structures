@@ -1,6 +1,7 @@
 package oct10;
 
-
+//Vickie Wu
+//10/10/19
 
 public class Link {
 	private long dData; // data item
