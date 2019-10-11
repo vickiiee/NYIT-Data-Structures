@@ -23,7 +23,7 @@ public class FirstLastApp {
 		System.out.println("List 1:");
 		FirstLastList list1 = new FirstLastList();
 		list1.insertLast(1);
-		list1.insertLast(3);
+		list1.insertLast(1);
 		list1.insertLast(7);
 		list1.insertLast(4);
 		list1.displayList();
@@ -34,7 +34,7 @@ public class FirstLastApp {
 		list2.insertLast(4);
 		list2.insertLast(5);
 		list2.insertLast(8);
-		list2.insertLast(6);
+		list2.insertLast(8);
 		list2.displayList();
 
 		System.out.println("\nList1.join(List2):");

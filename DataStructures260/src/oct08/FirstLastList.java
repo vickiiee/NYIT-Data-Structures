@@ -28,12 +28,37 @@ public class FirstLastList {
 		}
 
 		// get data and change data
+		//Original Code
 
+		/*
 		Long headData = last.getdData();
 		Long tailData = first.getdData();
 
 		first.setdData(headData);
 		last.setdData(tailData);
+		*/
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//actual swapping links instead of elements
+		Link c = first;
+		Link pre = first;
+		while(c!=null) {
+			if(c.getNext() == null) {
+				break;
+			}
+			//get links for the last and second to last links
+			pre = c;
+			c=c.getNext();
+		}
+		
+		Link sec = first.getNext(); //access to second link
+		
+		Link temp = first;
+		first = c;
+		c = temp;
+		
+		first.setNext(sec);
+		c.setNext(null);
+		pre.setNext(c);
 	}
 
 	//---------------------------join(list list)---------------------------------------------------------
