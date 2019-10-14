@@ -84,13 +84,13 @@ public class PriorityLinkQueue{
 			list.insertFirst(key);
 		} else {
 			Link current = list.getFirst();
-			long data = current.dData;
+			long data = current.getdData();
 			while (current != null) {
 				// 0,2,5,7,9
 				// key = 8
 				System.out.println("		while loop");
 				// long previous = current.previous.dData;
-				data = current.dData;
+				data = current.getdData();
 
 				if (data >= key) {
 					// insert before
@@ -103,11 +103,11 @@ public class PriorityLinkQueue{
 						 */
 						Link newLink = new Link(key);
 
-						current.previous.next = newLink;
-						newLink.previous = current.previous;
+						current.getPrevious().setNext(newLink);
+						newLink.setPrevious(current.getPrevious());
 
-						newLink.next = current;
-						current.previous = newLink;
+						newLink.setNext(current);
+						current.setPrevious(newLink);
 
 						return;
 					} else {
@@ -115,7 +115,7 @@ public class PriorityLinkQueue{
 						return;
 					}
 				}
-				current = current.next;
+				current = current.getNext();
 			}
 			list.insertLast(key);
 		}
@@ -126,7 +126,7 @@ public class PriorityLinkQueue{
 		// just remove last link because if its sorted it should already have the
 		// highest in the lst
 		Link l = list.deleteLast();
-		long value = l.dData;
+		long value = l.getdData();
 		return value;
 	}
 	
