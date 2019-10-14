@@ -10,7 +10,7 @@ public class DoublyLinkedList {
 
 	public DoublyLinkedList() // constructor
 	{
-		setFirst(null); // no items on list yet
+		first = null; // no items on list yet
 		last = null;
 	}
 
@@ -28,14 +28,9 @@ public class DoublyLinkedList {
 		if (isEmpty()) // if empty list,
 			last = newLink; // newLink <-- last
 		else {
-			//*change
-			Link f = getFirst();
-			f.setPrevious(newLink);
-			//*getFirst().previous = newLink; // newLink <-- old first
+			getFirst().setPrevious(newLink);// newLink <-- old first
 		}
-		//*change
-		newLink.setNext(getFirst());
-		//*newLink.next = getFirst(); // newLink --> old first
+		newLink.setNext(getFirst());// newLink --> old first
 		setFirst(newLink); // first --> newLink
 	}
 
@@ -46,13 +41,8 @@ public class DoublyLinkedList {
 		if (isEmpty()) // if empty list,
 			setFirst(newLink); // first --> newLink
 		else {
-			//*change
-			last.setNext(newLink);
-			//*last.next = newLink; // old last --> newLink
-			
-			//*change
-			newLink.setPrevious(last);
-			//*newLink.previous = last; // old last <-- newLink
+			last.setNext(newLink);// old last --> newLink
+			newLink.setPrevious(last);// old last <-- newLink
 		}
 		last = newLink; // newLink <-- last
 	}
@@ -61,25 +51,14 @@ public class DoublyLinkedList {
 	public Link deleteFirst() // delete first link
 	{ // (assumes non-empty list)
 		Link temp = getFirst();
-		
-		//*change
-		Link nTemp = temp.getNext();
-		if(nTemp == null) {
-		//*if (getFirst().next == null) // if only one item
-			
+	
+		if(getFirst().getNext() == null) {// if only one item
 			last = null; // null <-- last
 		}else {
-			
-			//*change
-			nTemp.setPrevious(null);
-			//*getFirst().next.previous = null; // null <-- old next
+			getFirst().getNext().setPrevious(null);// null <-- old next
 		}
 		
-		//*change
-		Link f = getFirst();
-		Link n = f.getNext();
-		setFirst(n);
-		//*setFirst(getFirst().next); // first --> old next
+		setFirst(getFirst().getNext());// first --> old next
 		
 		return temp;
 	}
@@ -89,18 +68,13 @@ public class DoublyLinkedList {
 	{ // (assumes non-empty list)
 		Link temp = last;
 		
-		//*change
-		if(getFirst().getNext() ==null) {
-		//*if (getFirst().next == null) // if only one item
+		if(getFirst().getNext() ==null) {// if only one item 
 			setFirst(null); // first --> null
 		}else {
-			//*change
-			last.getPrevious().setNext(null);
-			//*last.previous.next = null; // old previous --> null
+			last.getPrevious().setNext(null);// old previous --> null
 		}
-		//*change
-		last = last.getPrevious();
-		//*last = last.previous; // old previous <-- last
+
+		last = last.getPrevious();// old previous <-- last
 		return temp;
 	}
 
@@ -108,13 +82,10 @@ public class DoublyLinkedList {
 	// insert dd just after key
 	public boolean insertAfter(long key, long dd) { // (assumes non-empty list)
 		Link current = getFirst(); // start at beginning
-		//*change
-		while(current.getdData()!= key)
-		//*while (current.dData != key) // until match is found,
+
+		while(current.getdData()!= key)// until match is found,
 		{
-			//*change
-			current = current.getNext();
-			//*current = current.next; // move to next link
+			current = current.getNext(); // move to next link
 			if (current == null)
 				return false; // didn't find it
 		}
@@ -122,25 +93,15 @@ public class DoublyLinkedList {
 
 		if (current == last) // if last link,
 		{
-			//*change
-			newLink.setNext(null);
-			//*newLink.next = null; // newLink --> null
+			newLink.setNext(null);// newLink --> null
 			last = newLink; // newLink <-- last
 		} else // not last link,
 		{
-			//*change
-			newLink.setNext(current.getNext());
-			//*newLink.next = current.next; // newLink --> old next
-											// newLink <-- old next
-			//*change
-			current.getNext().setPrevious(newLink);
-			//*current.next.previous = newLink;
+			newLink.setNext(current.getNext());// newLink --> old next
+			current.getNext().setPrevious(newLink);// newLink <-- old next
 		}
-		//*change
-		newLink.setPrevious(current);
-		current.setNext(newLink);
-		//*newLink.previous = current; // old current <-- newLink
-		//*current.next = newLink; // old current --> newLink
+		newLink.setPrevious(current); // old current <-- newLink
+		current.setNext(newLink);// old current --> newLink
 		return true; // found it, did insertion
 	}
 
@@ -148,36 +109,25 @@ public class DoublyLinkedList {
 	public Link deleteKey(long key) // delete item w/ given key
 	{ // (assumes non-empty list)
 		Link current = getFirst(); // start at beginning
-		//*change
-		while(current.getdData()!=key)
-		//*while (current.dData != key) // until match is found,
+		
+		while(current.getdData()!=key)// until match is found,
 		{
-			//*change
-			current = current.getNext();
-			//*current = current.next; // move to next link
+			current = current.getNext();// move to next link 
 			if (current == null)
 				return null; // didn't find it
 		}
 		if (current == getFirst()) { // found it; first item?
-			//*change
-			setFirst(current.getNext());
-			//*setFirst(current.next); // first --> old next
+			setFirst(current.getNext());// first --> old next 
 		}else { // not first
 				// old previous --> old next
-			//*change
 			current.getPrevious().setNext(current.getNext());
-			//*current.previous.next = current.next;
 		}
 		
 		if (current == last) // last item?
-			//*change
-			last = current.getPrevious();
-			//*last = current.previous; // old previous <-- last
+			last = current.getPrevious();// old previous <-- last
 		else // not last
 				// old previous <-- old next
-			//*change
 			current.getNext().setPrevious(current.getPrevious());
-			//*current.next.previous = current.previous;
 		return current; // return value
 	}
 
@@ -188,9 +138,7 @@ public class DoublyLinkedList {
 		while (current != null) // until end of list,
 		{
 			current.displayLink(); // display data
-			//*change
-			current = current.getNext();
-			//*current = current.next; // move to next link
+			current = current.getNext(); // move to next link
 		}
 		System.out.println("");
 	}
@@ -202,9 +150,7 @@ public class DoublyLinkedList {
 		while (current != null) // until start of list,
 		{
 			current.displayLink(); // display data
-			//*change
-			current = current.getPrevious();
-			//*current = current.previous; // move to previous link
+			current = current.getPrevious();// move to previous link
 		}
 		System.out.println("");
 	}
