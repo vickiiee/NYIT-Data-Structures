@@ -5,67 +5,35 @@ package oct10;
 
 public class DoublyLinkedApp {
 	public static void main(String[] args) { // make a new list
-		DoublyLinkedList theList = new DoublyLinkedList();
+		System.out.println("Priority Queue:");
+		PriorityLinkQueue list = new PriorityLinkQueue();
+		list.insertSort(8);
+		list.insertSort(5);
+		list.insertSort(7);
+		list.insertSort(9);
+		list.insertSort(3);
+		list.insertSort(2);
+		list.insertSort(6);
+		list.insertSort(1);
+		list.insertSort(50);
+		list.insertSort(4);
+		list.insertSort(10);
+		list.insertSort(100);
+		list.insertSort(60);
+		list.insertSort(30);
+		list.insertSort(0);
+		list.displayForward();
 
-theList.insertFirst(22); // insert at front
-		theList.insertFirst(44);
-	theList.insertFirst(66);
+		System.out.println("\nRemove() returns "+list.remove());
+		list.displayForward();
 
-	theList.insertLast(11); // insert at rear	
-	theList.insertLast(33);
-		theList.insertLast(55);
-
-		theList.displayForward(); // display list forward
-		theList.displayBackward(); // display list backward
-
-		theList.deleteFirst(); // delete first item
-		theList.deleteLast(); // delete last item
-		theList.deleteKey(11); // delete item with key 11
-
-		theList.displayForward(); // display list forward
-
-		theList.insertAfter(22, 77); // insert 77 after 22
-		theList.insertAfter(33, 88); // insert 88 after 33
-
-		theList.displayForward(); // display list forward
-		theList.displayBackward();
+		System.out.println("\nRemove() returns "+list.remove());
+		list.displayForward();
 		
-		System.out.println("Priority Queue");
-		PriorityLinkQueue test = new PriorityLinkQueue();
-	//	test.displayForward();
-		test.insertSort(56);
-		test.insertSort(28);
-		test.insertSort(57);
-		/*
-		 * doesnt work if num is bigger than previous
-		 */
-		test.insertSort(9); 
-		test.insertSort(3);
-		test.insertSort(100);
-		test.insertSort(9); 
-		test.insertSort(3);
-		test.insertSort(100);
-		test.insertSort(9); 
-		test.insertSort(3);
-		test.insertSort(100);
-		test.insertSort(9); 
-		test.insertSort(3);
-		test.insertSort(100);
+		System.out.println("\nRemove() returns "+list.remove());
+		list.displayForward();
 		
-		System.out.println("\nPriority Queue");
-		
-		test.displayForward();
-		test.displayBackward();
-		test.remove();
-		test.displayForward();
-		test.displayBackward();
-		test.remove();
-		test.displayForward();
-		test.displayBackward();
-		test.remove();
-		test.displayForward();
-		test.displayBackward();
-		
-		test.displayForward();
+		System.out.println("\nRemove() returns "+list.remove());
+		list.displayForward();
 	} // end main()
-} 
+}
