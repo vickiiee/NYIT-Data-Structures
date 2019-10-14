@@ -7,21 +7,21 @@ public class DoublyLinkedApp {
 	public static void main(String[] args) { // make a new list
 		System.out.println("Priority Queue:");
 		PriorityLinkQueue list = new PriorityLinkQueue();
-		list.insertSort(8);
-		list.insertSort(5);
-		list.insertSort(7);
-		list.insertSort(9);
-		list.insertSort(3);
-		list.insertSort(2);
-		list.insertSort(6);
-		list.insertSort(1);
-		list.insertSort(50);
-		list.insertSort(4);
-		list.insertSort(10);
-		list.insertSort(100);
-		list.insertSort(60);
-		list.insertSort(30);
-		list.insertSort(0);
+		list.insertPriority(8);
+		list.insertPriority(5);
+		list.insertPriority(7);
+		list.insertPriority(9);
+		list.insertPriority(3);
+		list.insertPriority(2);
+		list.insertPriority(6);
+		list.insertPriority(1);
+		list.insertPriority(50);
+		list.insertPriority(4);
+		list.insertPriority(10);
+		list.insertPriority(100);
+		list.insertPriority(60);
+		list.insertPriority(30);
+		list.insertPriority(0);
 		list.displayForward();
 
 		System.out.println("\nRemove() returns "+list.remove());

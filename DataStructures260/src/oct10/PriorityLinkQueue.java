@@ -4,14 +4,15 @@ package oct10;
 //10/10/19
 
 public class PriorityLinkQueue{
-
+	//Sorted queue with least to highest priority from left to right
+	
 	private DoublyLinkedList list;
 	
 	public PriorityLinkQueue() {
 		list = new DoublyLinkedList();
 	}
 
-	public void insertSort(long key) { // or insert long and make new link
+	public void insertPriority(long key) { 
 		//System.out.println("\n	method called: " + key);
 		// smallest -> biggest
 		// 0,2,5,7,9
@@ -37,7 +38,6 @@ public class PriorityLinkQueue{
 
 						newLink.setNext(current);
 						current.setPrevious(newLink);
-
 						return;
 					} else {
 						list.insertFirst(key);
@@ -51,9 +51,15 @@ public class PriorityLinkQueue{
 
 	}
 
-	public long remove() {
+	public long remove(){
 		// just remove last link because list should already be sorted so highest # will already be on the right/last
-		return list.deleteLast().getdData();
+		if(!list.isEmpty()) {
+			return list.deleteLast().getdData();
+		}else {
+			System.out.println("list is empty");
+			return -1;
+		}
+		
 	}
 	
 	public void displayForward() {

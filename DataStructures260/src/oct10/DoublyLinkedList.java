@@ -6,6 +6,46 @@ package oct10;
 public class DoublyLinkedList {
 	private Link first; // ref to first item
 	private Link last; // ref to last item
+	
+	public void insertPriority(long key) { 
+		//System.out.println("\n	method called: " + key);
+		// smallest -> biggest
+		// 0,2,5,7,9
+		// key = 8
+
+		if (isEmpty()) {
+			//System.out.println("	isEmpty");
+			insertFirst(key);
+		} else {
+			Link current = getFirst();
+			long data = current.getdData();
+			while (current != null) {
+				//System.out.println("		while loop");
+				data = current.getdData();
+				
+				if (data >= key) {
+					// insert before; make new pathways to new link
+					if (current != getFirst()) {
+						Link newLink = new Link(key);
+
+						current.getPrevious().setNext(newLink);
+						newLink.setPrevious(current.getPrevious());
+
+						newLink.setNext(current);
+						current.setPrevious(newLink);
+
+						return;
+					} else {
+						insertFirst(key);
+						return;
+					}
+				}
+				current = current.getNext();
+			}
+			insertLast(key);
+		}
+
+	}
 // -------------------------------------------------------------
 
 	public DoublyLinkedList() // constructor
