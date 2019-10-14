@@ -1,15 +1,18 @@
 package oct10;
 
+//Vickie Wu
+//10/10/19
+
 public class DoublyLinkedApp {
 	public static void main(String[] args) { // make a new list
 		DoublyLinkedList theList = new DoublyLinkedList();
 
-		theList.insertFirst(22); // insert at front
+theList.insertFirst(22); // insert at front
 		theList.insertFirst(44);
-		theList.insertFirst(66);
+	theList.insertFirst(66);
 
-		theList.insertLast(11); // insert at rear
-		theList.insertLast(33);
+	theList.insertLast(11); // insert at rear	
+	theList.insertLast(33);
 		theList.insertLast(55);
 
 		theList.displayForward(); // display list forward
@@ -42,6 +45,12 @@ public class DoublyLinkedApp {
 		test.insertSort(9); 
 		test.insertSort(3);
 		test.insertSort(100);
+		test.insertSort(9); 
+		test.insertSort(3);
+		test.insertSort(100);
+		test.insertSort(9); 
+		test.insertSort(3);
+		test.insertSort(100);
 		
 		System.out.println("\nPriority Queue");
 		
@@ -57,6 +66,6 @@ public class DoublyLinkedApp {
 		test.displayForward();
 		test.displayBackward();
 		
-	//	test.displayForward();
+		test.displayForward();
 	} // end main()
 } 
