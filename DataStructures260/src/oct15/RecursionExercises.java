@@ -31,7 +31,7 @@ public class RecursionExercises {
 		return end + rangeSum(start,end-1);
 	}
 	
-	//Ex8
+	//EX 8:
 	public int countX(String s) {
 		int x = s.indexOf("x");
 		if(x== -1) {
@@ -39,14 +39,6 @@ public class RecursionExercises {
 		}else {
 			return 1+countX(s.substring(x+1));
 		}
-	}
-	
-	//Ex 9
-	public int countHi(String c) {
-		if(c.indexOf("hi")==-1) {
-			return 0;
-		}else
-			return 1+ countHi(c.substring(c.indexOf("hi")+1));
 	}
 	
 	//EX 10:
