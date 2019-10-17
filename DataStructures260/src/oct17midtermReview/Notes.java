@@ -7,7 +7,11 @@ public class Notes {
 	 * Ch2 Arrays 
 	 * • The Basics of Arrays in Java (search, insert, delete) 
 	 * • Java Code for an Ordered Array (searching: linear, binary) (noDups()) 
-	 * • Logarithms (how many steps are required to binary search and array of 1000 elements?) 
+	 * • Logarithms (how many steps are required to binary search and array of 1000 (N) elements?) 
+	 * 		>Check out Zybooks 2.2
+	 * 		>Binary Search: [log2 (N) + 1] = number of STEPS required if cannot find the search element. 
+	 * 						[log2 (N)] = number of elements checked if cannot find the search element
+	 * 		>Linear Search: N times if cannot find the search element
 	 * • Big O Notation (Running Time in Big O Notation)
 	 * 
 	 * Ch3 Simple sorting 
