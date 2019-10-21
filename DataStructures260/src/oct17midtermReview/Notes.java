@@ -69,9 +69,14 @@ public class Notes {
 				  77 44 55 99
 				  
 				  *2nd pass
-				  44 77 55 99
-				  44 55 77 99
+				  44 77 55 |99
+				  44 55 77 |99
+				  *3rd pass
+				  44 55 |77 99
 				  -end-
+				  Everything: https://www.geeksforgeeks.org/bubble-sort/
+				  Another visual: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/
+				  				https://visualgo.net/en/sorting
 	 * • Selection Sort (same) 
 	 * • Insertion Sort (same)
 	 * 
