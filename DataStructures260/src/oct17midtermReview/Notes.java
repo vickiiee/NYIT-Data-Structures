@@ -55,6 +55,23 @@ public class Notes {
 	 * 			*Fibonacchi
 	 * Ch3 Simple sorting 
 	 * • Bubble Sort (77 99 44 55 show the steps) 
+	 * 		>Zybooks 3.2
+	 * 		>a sorting algorithm that iterates through a list, 
+	 * 		comparing and SWAPPING ADJACENT ELEMENTS if 
+	 * 		the second element is less than the first element : O(N^2)
+	 * 		>Nested for loops
+	 * 		>Ultimately the biggest will be on the far right
+	 * 		EX: STEps 
+				 List: 77 99 44 55
+				  *1st pass
+				  77 99 44 55
+				  77 44 99 55
+				  77 44 55 99
+				  
+				  *2nd pass
+				  44 77 55 99
+				  44 55 77 99
+				  -end-
 	 * • Selection Sort (same) 
 	 * • Insertion Sort (same)
 	 * 
