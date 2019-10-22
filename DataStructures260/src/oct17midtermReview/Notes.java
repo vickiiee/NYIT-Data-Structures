@@ -61,7 +61,11 @@ public class Notes {
 	 * 		 the second element is less than the first element : O(N^2)
 	 * 		>Nested for loops
 	 * 		>Ultimately the biggest will be on the far right
+	 * 		>i in for loop never reaches end of array which is sorted
+	 * 		>biggest number will always be on the right
+	 * 		>each pass swaps x times
 	 * 		EX: STEps 
+	 * 			Practice:https://facweb.northseattle.edu/voffenba/class/CSC110-Resources/BubbleSortPractice.htm
 				 List: 77 99 44 55
 				  *1st pass
 				  77 99 44 55
@@ -82,10 +86,11 @@ public class Notes {
 	 * 		>The term "selection" comes from the fact that for each iteration of the outer loop, a value is selected for position i.
 	 * 		>The index variable i denotes the dividing point. Elements to the left of i are sorted, 
 	 * 		 and elements including and to the right of i are unsorted.
-	 * 		>go down array, 'select' lowest element, then swap indexes
+	 * 		>go down rest of unsorted part of array, 'select' lowest element, then swap indexes
 	 * 		>Nested for loops O(N^2)
 	 * 		>Swaps 1X during each pass of outer loop
 	 * 		EX: STEps 
+	 * 		Practice: https://facweb.northseattle.edu/voffenba/class/CSC110-Resources/SelectionSortPractice.htm
 				 List: 77 99 44 55
 				 *1st pass
 				 44 99 77 55
@@ -106,17 +111,18 @@ public class Notes {
 	 * 		>O(N^2) for unsprted
 	 * 		>O(N) for nearly sorted
 	 * 		>At start, index 0 is considered sorted and the rest of arr is unsorted
-	 * 		>Swaps made only if element at index i is smaller than previous elements
+	 * 		>Elements shift down to make space for element at correct position
+	 * 			>At least one comparison for each pass
+	 * 			> Shift elements down x times and only 1** swap per pass
+	 * 		>only 1 for loop
 	 * 		EX: STEps 
-				 List: 77 99 44 55
+	 * 				https://facweb.northseattle.edu/voffenba/class/CSC110-Resources/InsertionSortPractice.htm
+				 List: 77| 99 44 55
 				 *1st
 				 77 99| 44 55
 				 *2nd
-				 77 44 99 55
 				 44 77 99| 55
 				 *3rd
-				 44 77 99 55
-				 44 77 55 99
 				 44 55 77 99|
 				 *everything b4 | is srted part of arr
 				 
