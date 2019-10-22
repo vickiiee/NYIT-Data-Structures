@@ -57,8 +57,8 @@ public class Notes {
 	 * • Bubble Sort (77 99 44 55 show the steps) 
 	 * 		>Zybooks 3.2
 	 * 		>a sorting algorithm that iterates through a list, 
-	 * 		comparing and SWAPPING ADJACENT ELEMENTS if 
-	 * 		the second element is less than the first element : O(N^2)
+	 * 		 comparing and SWAPPING ADJACENT ELEMENTS if 
+	 * 		 the second element is less than the first element : O(N^2)
 	 * 		>Nested for loops
 	 * 		>Ultimately the biggest will be on the far right
 	 * 		EX: STEps 
@@ -78,7 +78,48 @@ public class Notes {
 				  Another visual: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/
 				  				https://visualgo.net/en/sorting
 	 * • Selection Sort (same) 
+	 * 		>Zybooks 3.3
+	 * 		>The term "selection" comes from the fact that for each iteration of the outer loop, a value is selected for position i.
+	 * 		>The index variable i denotes the dividing point. Elements to the left of i are sorted, 
+	 * 		 and elements including and to the right of i are unsorted.
+	 * 		>go down array, 'select' lowest element, then swap indexes
+	 * 		>Nested for loops O(N^2)
+	 * 		>Swaps 1X during each pass of outer loop
+	 * 		EX: STEps 
+				 List: 77 99 44 55
+				 *1st pass
+				 44 99 77 55
+				 *2nd pass
+				 44| 55 77 99
+				 *3rd
+				 44 55| 77 99
+				 *4th
+				 44 55 77 |99
+	 * 		
 	 * • Insertion Sort (same)
+	 * 		>Zybooks 3.4
+	 * 		>The index variable i denotes the starting position of the current element in the unsorted part. 
+	 * 		 Initially, the first element (i.e., element at index 0) is assumed to be sorted, so the outer for loop initializes i to 1. 
+	 * 		 The inner while loop inserts the current element into the sorted part by repeatedly swapping the current element with the 
+	 * 		 elements in the sorted part that are larger. Once a smaller or equal element is found in the sorted part,
+	 * 		 the current element has been inserted in the correct location and the while loop terminates.
+	 * 		>O(N^2) for unsprted
+	 * 		>O(N) for nearly sorted
+	 * 		>At start, index 0 is considered sorted and the rest of arr is unsorted
+	 * 		>Swaps made only if element at index i is smaller than previous elements
+	 * 		EX: STEps 
+				 List: 77 99 44 55
+				 *1st
+				 77 99| 44 55
+				 *2nd
+				 77 44 99 55
+				 44 77 99| 55
+				 *3rd
+				 44 77 99 55
+				 44 77 55 99
+				 44 55 77 99|
+				 *everything b4 | is srted part of arr
+				 
 	 * 
 	 * Ch4 Stacks and Queues (with arrays) 
 	 * • (12 3 4 * 5 * * 9 * 10) Numbers mean a push on a stack and * means a pop. What is the final stack? 
