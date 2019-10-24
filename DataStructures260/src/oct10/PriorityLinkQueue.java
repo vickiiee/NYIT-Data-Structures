@@ -18,7 +18,7 @@ public class PriorityLinkQueue{
 		// 0,2,5,7,9
 		// key = 8
 
-		if (list.isEmpty()) {
+		if (list.isEmpty()) {//
 			//System.out.println("	isEmpty");
 			list.insertFirst(key);
 		} else {
