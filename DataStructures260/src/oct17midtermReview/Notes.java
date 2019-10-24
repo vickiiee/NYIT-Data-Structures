@@ -128,8 +128,14 @@ public class Notes {
 				 
 	 * 
 	 * Ch4 Stacks and Queues (with arrays) 
+	 * 		Stacks: zybook ch 4.1
+	 * 			"last-in first-out"
+	 * 		Queues: zybook ch 4.2 
+	 * 			"first-in first-out"
 	 * • (12 3 4 * 5 * * 9 * 10) Numbers mean a push on a stack and * means a pop. What is the final stack? 
+	 * 		12,10
 	 * • (12 3 4 * 5 * * 9 * 10) Numbers mean a add to a queue and * means remove. What is the final queue? 
+	 * 		5,9,10
 	 * • Stacks (write a stack class with array/link list) 
 	 * • Queues (write a queue class with array/link list) 
 	 * • Priority Queues 
