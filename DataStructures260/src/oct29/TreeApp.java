@@ -135,7 +135,7 @@ class TreeApp {
 				break;
 			case 'q':
 				//quit
-				System.out.print("Quit");
+				System.out.print("--------End--------");
 				start = false;
 				break;
 			default:
@@ -179,7 +179,7 @@ class TreeApp {
 	}
 	
 	public static int minimum(Node rootLeftChild) {
-		if(rootLeftChild != null) {
+		/*if(rootLeftChild != null) {
 			//System.out.println("mini: "+minimum+ " data:"+rootLeftChild.iData );
 			if(rootLeftChild.iData<minimum) {
 				minimum = rootLeftChild.iData;
@@ -188,11 +188,18 @@ class TreeApp {
 			minimum(rootLeftChild.leftChild);
 			minimum(rootLeftChild.rightChild);
 		}
-		return minimum;
+		return minimum;*/
+		
+		Node current  = rootLeftChild;
+		while (current.leftChild!= null) {
+			current = current.leftChild;
+		}
+		
+		return current.iData;
 	}
 	
 	public static int maximum(Node rootRightChild) {
-		if(rootRightChild != null) {
+		/*if(rootRightChild != null) {
 			//System.out.println("mini: "+minimum+ " data:"+rootLeftChild.iData );
 			if(rootRightChild.iData>max) {
 				max = rootRightChild.iData;
@@ -201,11 +208,18 @@ class TreeApp {
 			maximum(rootRightChild.leftChild);
 			maximum(rootRightChild.rightChild);
 		}
-		return max;
+		return max;*/
+		
+		Node current = rootRightChild; //w/0 parameters
+		
+		if(current.rightChild != null) {
+			current = current.rightChild;
+		}
+		return current.iData;
 	}
 	
 	public static int rightMinValue(Node rootRightChild) {
-		if(rootRightChild != null) {
+		/*if(rootRightChild != null) {
 			System.out.println("rughtmini: "+rightMinValue+ " data:"+rootRightChild.iData );
 			if(rootRightChild.iData<rightMinValue) {
 				rightMinValue = rootRightChild.iData;
@@ -214,11 +228,21 @@ class TreeApp {
 			rightMinValue(rootRightChild.leftChild);
 			rightMinValue(rootRightChild.rightChild);
 		}
-		return rightMinValue;
+		return rightMinValue;*/
+		
+		//w/o parameters
+		if(theTree.getRoot().rightChild == null) {
+			//no right min vlue
+		}
+		Node current = theTree.getRoot().rightChild;
+		while(current.leftChild!= null) {
+			current = current.leftChild;
+		}
+		return current.iData;
 	}
 	
 	public static int leftMaxValue(Node rootLeftChild) {
-		if(rootLeftChild != null) {
+		/*if(rootLeftChild != null) {
 			System.out.println("leftmax: "+leftMaxValue+ " data:"+rootLeftChild.iData );
 			if(rootLeftChild.iData>leftMaxValue) {
 				leftMaxValue = rootLeftChild.iData;
@@ -227,17 +251,41 @@ class TreeApp {
 			leftMaxValue(rootLeftChild.leftChild);
 			leftMaxValue(rootLeftChild.rightChild);
 		}
-		return leftMaxValue;
+		return leftMaxValue;*/
+		
+		//w/o parameter
+		
+		Node current = theTree.getRoot().leftChild;
+		while(current.rightChild!= null) {
+			current = current.rightChild;
+		}
+		return current.iData;
 	}
 	
 	
 	//----------------------------------------------------------------------
 
 	public static String getString() throws IOException {
-		InputStreamReader isr = new InputStreamReader(System.in);
+		/*InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);
 		String s = br.readLine();
+		if (s == "") {
+			System.out.println("fhgfjhgkg");
+		}
+return s;*/
+		
+
+		String s = stringVal();
+		while(s.isEmpty()) {
+			System.out.println("Please enter valid input");
+			s = stringVal();
+		}
 		return s;
+	}
+	
+	public static String stringVal() {
+		Scanner input = new Scanner(System.in);
+		return input.nextLine();
 	}
 
 // -------------------------------------------------------------
