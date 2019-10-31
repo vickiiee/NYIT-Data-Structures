@@ -122,6 +122,7 @@ class TreeApp {
 				break;
 			case 'v':
 				//removeLeaves
+				removeLeaves(theTree.getRoot());
 				break;
 			case 'r':
 				//rightMin: minimum value of right subtree
@@ -176,6 +177,18 @@ class TreeApp {
 		}
 		dep = true;
 		return edge;
+	}
+	
+	public static void removeLeaves(Node root) {
+		Node current = root;
+		if (current != null) {
+			if(current.leftChild == null && current.rightChild == null) {
+				theTree.delete(current.iData);
+			}
+			System.out.print(current.iData + " ");
+			removeLeaves(current.leftChild);
+			removeLeaves(current.rightChild);
+		}
 	}
 	
 	public static int minimum(Node rootLeftChild) {
