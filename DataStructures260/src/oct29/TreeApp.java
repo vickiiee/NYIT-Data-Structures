@@ -31,8 +31,7 @@ class TreeApp {
 		while (start) {
 			theTree.displayTree();
 			System.out.println("Enter first letter of show, insert, find, delete, or traverse, OR");
-			System.out.println(
-					"Enter z for size, p for depth, x for max, n for min, v for removeLeaves, \n	r for rightMinValue, l for leftMinValue, or q for quit");
+			System.out.println("Enter z for size, p for depth, x for max, n for min, v for removeLeaves, \n	r for rightMinValue, l for leftMinValue, or q for quit");
 
 			int choice = getChar();
 			switch (choice) {
