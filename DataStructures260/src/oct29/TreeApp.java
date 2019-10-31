@@ -1,8 +1,7 @@
 package oct29;
-
-import java.io.BufferedReader;
+//Vickie Wu
+//10/29/19
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 	
 class TreeApp {
@@ -32,7 +31,7 @@ class TreeApp {
 		theTree.insert(2, 1.5);
 		
 		///////////////////////////////og
-		/*theTree.insert(50, 1.5);
+	/*	theTree.insert(50, 1.5);
 		theTree.insert(25, 1.2);
 		theTree.insert(75, 1.7);
 		theTree.insert(12, 1.5);
@@ -40,7 +39,7 @@ class TreeApp {
 		theTree.insert(43, 1.7);
 		theTree.insert(30, 1.5);
 		theTree.insert(33, 1.2);
-		theTree.insert(87, 1.7);
+		theTree.insert(7, 1.7);
 		theTree.insert(93, 1.5);
 		theTree.insert(97, 1.5);*/
 
@@ -104,7 +103,7 @@ class TreeApp {
 				int nodeData = getInt;
 				int depth = depth(nodeData);
 				if(dep == false) {
-					System.out.println("The node is not found.\n");
+					System.out.println("The node is not in tree.\n");
 				}else {
 					System.out.println("The node with key " + nodeData + " has depth "+ depth+"\n");
 				}
@@ -112,13 +111,22 @@ class TreeApp {
 				break;
 			case 'x':
 				//max: return max node
+				if(theTree.getRoot() ==null) {
+					System.out.println("No nodes in tree.");
+				}else {
 				max = theTree.getRoot().iData;
-				System.out.print("Maximum: "+maximum(theTree.getRoot().rightChild)+"\n");
+				System.out.print("Maximum: "+maximum(theTree.getRoot())+"\n");
+				}
+			
 				break;
 			case 'n':
 				//min : return min mode
+				if(theTree.getRoot() ==null) {
+					System.out.println("No nodes in tree.");
+				}else {
 				 minimum = theTree.getRoot().iData;
-				System.out.print("Minimum: "+minimum(theTree.getRoot().leftChild)+"\n");
+				System.out.print("Minimum: "+minimum(theTree.getRoot())+"\n");
+				}
 				break;
 			case 'v':
 				//removeLeaves
@@ -126,13 +134,24 @@ class TreeApp {
 				break;
 			case 'r':
 				//rightMin: minimum value of right subtree
+				if(theTree.getRoot() ==null) {
+					System.out.println("No nodes in tree.");
+				}else if(theTree.getRoot().rightChild ==null) {
+					System.out.println("No right subtree");
+				}else {
 				rightMinValue = theTree.getRoot().rightChild.iData;
-				System.out.print("Right Minimum Value: "+rightMinValue(theTree.getRoot().rightChild)+"\n");
+				System.out.print("Right Minimum Value: "+rightMinValue(theTree.getRoot().rightChild)+"\n");}
 				break;
 			case 'l':
 				//leftMin: minimum vaue of left subtree
+				if(theTree.getRoot() ==null) {
+					System.out.println("No nodes in tree.");
+				}else if(theTree.getRoot().leftChild ==null) {
+					System.out.println("No left subtree");
+				}else {
 				leftMaxValue = theTree.getRoot().leftChild.iData;
 				System.out.print("Left Maximum Value: "+leftMaxValue(theTree.getRoot().leftChild)+"\n");
+				}
 				break;
 			case 'q':
 				//quit
@@ -184,6 +203,7 @@ class TreeApp {
 		if (current != null) {
 			if(current.leftChild == null && current.rightChild == null) {
 				theTree.delete(current.iData);
+				
 			}
 			System.out.print(current.iData + " ");
 			removeLeaves(current.leftChild);
@@ -223,9 +243,10 @@ class TreeApp {
 		}
 		return max;*/
 		
-		Node current = rootRightChild; //w/0 parameters
-		
-		if(current.rightChild != null) {
+		Node current = theTree.getRoot(); //w/0 parameters
+		System.out.println(current.iData);
+		while(current.rightChild != null) {
+			System.out.println(current.rightChild.iData);
 			current = current.rightChild;
 		}
 		return current.iData;
