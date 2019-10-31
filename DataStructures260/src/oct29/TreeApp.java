@@ -19,7 +19,7 @@ class TreeApp {
 		 theTree= new Tree();
 		boolean start = true;
 		//hw
-		theTree.insert(7, 1.5);
+		/*theTree.insert(7, 1.5);
 		theTree.insert(5, 1.2);
 		theTree.insert(1, 1.7);
 		theTree.insert(8, 1.5);
@@ -28,10 +28,10 @@ class TreeApp {
 		theTree.insert(0, 1.5);
 		theTree.insert(9, 1.2);
 		theTree.insert(4, 1.7);
-		theTree.insert(2, 1.5);
+		theTree.insert(2, 1.5);*/
 		
 		///////////////////////////////og
-	/*	theTree.insert(50, 1.5);
+		theTree.insert(50, 1.5);
 		theTree.insert(25, 1.2);
 		theTree.insert(75, 1.7);
 		theTree.insert(12, 1.5);
@@ -41,7 +41,7 @@ class TreeApp {
 		theTree.insert(33, 1.2);
 		theTree.insert(7, 1.7);
 		theTree.insert(93, 1.5);
-		theTree.insert(97, 1.5);*/
+		theTree.insert(97, 1.5);
 
 		while (start) {
 			theTree.displayTree();
