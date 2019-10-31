@@ -3,6 +3,7 @@ package oct29;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 	
 class TreeApp {
 	private static Tree theTree;
@@ -10,7 +11,9 @@ class TreeApp {
 	private static int max;
 	private static int rightMinValue;
 	private static int leftMaxValue;
+	private static boolean dep;
 	
+	private static int getInt;
 	
 	public static void main(String[] args) throws IOException {
 		int value;
@@ -42,6 +45,7 @@ class TreeApp {
 		theTree.insert(97, 1.5);*/
 
 		while (start) {
+			theTree.displayTree();
 			System.out.println("Enter first letter of show, insert, find, delete, or traverse, OR");
 			System.out.println("Enter z for size, p for depth, x for max, n for min, v for removeLeaves, r for rightMin, l for leftMinValue, q for quit");
 			
@@ -54,12 +58,14 @@ class TreeApp {
 				break;
 			case 'i':
 				System.out.print("Enter value to insert: ");
-				value = getInt();
+				getInt();
+				value = getInt;
 				theTree.insert(value, value + 0.9);
 				break;
 			case 'f':
 				System.out.print("Enter value to find: ");
-				value = getInt();
+				getInt();
+				value = getInt;
 				Node found = theTree.find(value);
 				if (found != null) {
 					System.out.print("Found: ");
@@ -71,7 +77,8 @@ class TreeApp {
 				break;
 			case 'd':
 				System.out.print("Enter value to delete: ");
-				value = getInt();
+				getInt();
+				value = getInt;
 				boolean didDelete = theTree.delete(value);
 				if (didDelete)
 					System.out.print("Deleted " + value + '\n');
@@ -81,7 +88,8 @@ class TreeApp {
 				break;
 			case 't':
 				System.out.print("Enter type 1, 2 or 3: ");
-				value = getInt();
+				getInt();
+				value = getInt;
 				theTree.traverse(value);
 				break;
 			case 'z':
@@ -89,7 +97,18 @@ class TreeApp {
 				System.out.println("There are "+size(theTree.getRoot())+ " nodes.\n");
 				break;
 			case 'p':
-				//depth(key): height //check parents?
+				//depth(key): height 
+				dep = false;
+				System.out.println("Which node do you want to find the depth of?");
+				getInt();
+				int nodeData = getInt;
+				int depth = depth(nodeData);
+				if(dep == false) {
+					System.out.println("The node is not found.\n");
+				}else {
+					System.out.println("The node with key " + nodeData + " has depth "+ depth+"\n");
+				}
+				
 				break;
 			case 'x':
 				//max: return max node
@@ -130,9 +149,34 @@ class TreeApp {
 	    if (root == null)  
 	        return 0;  
 	    
-	    System.out.println("Node "+ root.iData);
+	   // System.out.println("Node "+ root.iData);
 	    return 1 +size(root.leftChild) +  size(root.rightChild);  
 	} 
+	
+	public static int depth(int key) {
+		//dep = true if key is found
+		int edge = 0;
+		
+		Node current  = theTree.getRoot();
+		
+		while(current != null && current.iData != key) {
+			System.out.println("data: " +current.iData);
+			if(current.iData<key) {
+				current = current.rightChild;
+				edge++;
+			}else {
+				current = current.leftChild;
+				edge++;
+			}
+		}
+		
+		if(current == null) {
+			dep = false;
+			return 0;
+		}
+		dep = true;
+		return edge;
+	}
 	
 	public static int minimum(Node rootLeftChild) {
 		if(rootLeftChild != null) {
@@ -185,6 +229,8 @@ class TreeApp {
 		}
 		return leftMaxValue;
 	}
+	
+	
 	//----------------------------------------------------------------------
 
 	public static String getString() throws IOException {
@@ -201,10 +247,42 @@ class TreeApp {
 	}
 
 //-------------------------------------------------------------
-	public static int getInt() throws IOException {
+	/*public static int getInt() throws NumberFormatException, IOException {
+		/*og
 		String s = getString();
 		return Integer.parseInt(s);
-	}
+		//
+		
+		String s = getString();
+		try {
+	        return Integer.parseInt(s);
+	    }
+	    catch (NumberFormatException e) {
+	        // It's OK to ignore "e" here because returning a default value is the documented behaviour on invalid input.
+	    	System.out.println("Please enter valid input (int)");
+	        getInt();
+	    }
+		return getInt();
+		
+	}*/
+public static void  getInt() throws NumberFormatException, IOException {
+		/*og
+		String s = getString();
+		return Integer.parseInt(s);
+		*/
+		
+		String s = getString();
+		try {
+	        getInt = Integer.parseInt(s);
+	    }
+	    catch (NumberFormatException e) {
+	        // It's OK to ignore "e" here because returning a default value is the documented behaviour on invalid input.
+	    	System.out.println("Please enter valid input (int)");
+	        getInt();
+	    }
+		
+}
+
 // -------------------------------------------------------------
 } // end class TreeApp
 ////////////////////////////////////////////////////////////////
